@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(
+        function(){
+            $( "#sub" ).click(function() {
+            send($("#rev").val());
+            });
+        }
+    );
+
+
+function send(x){
+    $.ajax({
+        type:"POST",
+        url:"index.php",
+        data:{resdata:x},
+        success:function(){alert("ok");}
+    })
+}
+
+
+</script>
+</head>
+<body>
+<form>
+<input id="rev" type="number" step="100"></input>
+<button id="sub">send</button> 
+
+
+
+</body>
+</html>
